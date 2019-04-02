@@ -17,6 +17,12 @@ pipeline {
       }
     }
     stage('Result') {
+      agent {
+        node {
+          label 'master'
+        }
+
+      }
       steps {
         sh 'echo \'Test result\''
       }
